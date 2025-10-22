@@ -1,106 +1,186 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Raju Meaw 👀💋 | Neon Bio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: #0f0c29;
-      background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      color: #fff;
-      text-align: center;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>⚡ Premium Presets | Alight Motion XML & Links ⚡</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #00e676; /* অ্যাকসেন্ট কালার (সবুজ বা আপনার পছন্দ মতো) */
+            --bg-color: #1a1a2e; /* ডার্ক ব্যাকগ্রাউন্ড */
+            --card-bg: #22223b; /* কার্ডের ব্যাকগ্রাউন্ড */
+            --text-color: #f0f0f0;
+            --secondary-text: #a0a0c0;
+        }
 
-    .card {
-      background: rgba(255, 255, 255, 0.05);
-      padding: 40px;
-      border-radius: 25px;
-      box-shadow: 0 0 20px #ff6ec4, 0 0 40px #7873f5;
-      backdrop-filter: blur(10px);
-      max-width: 400px;
-      transition: transform 0.3s;
-    }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
 
-    .card:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 30px #ff6ec4, 0 0 60px #7873f5;
-    }
+        .container {
+            width: 90%;
+            max-width: 900px;
+            padding: 30px;
+            background: var(--bg-color);
+        }
 
-    img {
-      width: 130px;
-      height: 130px;
-      border-radius: 50%;
-      border: 3px solid #ff6ec4;
-      object-fit: cover;
-      margin-bottom: 20px;
-      transition: transform 0.3s;
-    }
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 20px;
+        }
 
-    img:hover {
-      transform: rotate(10deg) scale(1.1);
-    }
+        .header h1 {
+            font-size: 2.5em;
+            color: var(--primary-color);
+            font-weight: 800;
+            letter-spacing: 1px;
+            margin: 0;
+        }
 
-    h1 {
-      font-size: 28px;
-      margin: 10px 0;
-      color: #ff6ec4;
-      text-shadow: 0 0 5px #ff6ec4, 0 0 10px #ff6ec4;
-    }
+        .link-section {
+            margin-bottom: 30px;
+        }
 
-    p {
-      font-size: 17px;
-      opacity: 0.9;
-      margin-bottom: 25px;
-      color: #ffffffaa;
-    }
+        .link-section h2 {
+            font-size: 1.8em;
+            color: var(--text-color);
+            border-left: 5px solid var(--primary-color);
+            padding-left: 15px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
 
-    .links a {
-      display: inline-block;
-      margin: 10px 5px;
-      padding: 12px 25px;
-      background: #ff6ec4;
-      color: #fff;
-      font-weight: bold;
-      border-radius: 25px;
-      text-decoration: none;
-      box-shadow: 0 0 10px #ff6ec4;
-      transition: 0.3s;
-    }
+        .link-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
 
-    .links a:hover {
-      background: #7873f5;
-      box-shadow: 0 0 20px #7873f5;
-      transform: scale(1.1);
-    }
+        .link-card {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 12px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(0, 230, 118, 0.2); /* হালকা বর্ডার */
+        }
 
-    footer {
-      margin-top: 25px;
-      font-size: 14px;
-      opacity: 0.7;
-    }
-  </style>
+        .link-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 230, 118, 0.2);
+        }
+
+        .link-card a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.2em;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .link-card a:hover {
+            text-decoration: underline;
+        }
+
+        .link-card .link-type {
+            font-size: 0.8em;
+            color: #ff4081; /* XML/Preset এর জন্য আলাদা কালার */
+            font-weight: 600;
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .link-card .description {
+            font-size: 0.9em;
+            color: var(--secondary-text);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .header h1 {
+                font-size: 2em;
+            }
+            .link-section h2 {
+                font-size: 1.5em;
+            }
+            .link-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="card">
-    <img src="https://i.ibb.co/zb8ZrQz/default-avatar.png" alt="Jan Photo">
-    <h1>Raju Meaw 👀💋</h1>
-    <p>Dream Team 💫 | Editor 💻 | Friendly Vibes Only 😎</p>
 
-    <div class="links">
-      <a href="https://facebook.com" target="_blank">Facebook</a>
-      <a href="https://t.me" target="_blank">Telegram</a>
-      <a href="https://youtube.com" target="_blank">YouTube</a>
+<div class="container">
+    <div class="header">
+        <h1>⚡ আমার সব প্রিমিয়াম প্রিসেট ও লিঙ্ক ⚡</h1>
     </div>
 
-    <footer>💖 Made with love by Jan</footer>
-  </div>
+    <div class="link-section">
+        <h2>★ Alight Motion (XML / Preset)</h2>
+        <div class="link-grid">
+            
+            <div class="link-card">
+                <span class="link-type">XML FILE</span>
+                <a href="https://drive.google.com/link-to-your-xml-1" target="_blank">Dark HDR CC Preset V1</a>
+                <span class="description">বিবরণ: সেরা ডার্ক কালার গ্রেডিং, যেকোনো এডিটের জন্য পারফেক্ট।</span>
+            </div>
+            
+            <div class="link-card">
+                <span class="link-type">ALIGHT LINK</span>
+                <a href="https://alight.link/your-alight-link-2" target="_blank">Viral Shake Effect (V3)</a>
+                <span class="description">বিবরণ: ইনস্টাগ্রাম রিলসের জন্য এই ভাইরাল শেকটি ব্যবহার করুন।</span>
+            </div>
+            
+            <div class="link-card">
+                <span class="link-type">XML FILE</span>
+                <a href="https://drive.google.com/link-to-your-xml-3" target="_blank">Smooth Velocity Preset</a>
+                <span class="description">বিবরণ: স্লো-মোশন ভিডিও এর জন্য সেরা ভেলোসিটি ইফেক্ট।</span>
+            </div>
+            
+            <div class="link-card">
+                <span class="link-type">XML FILE</span>
+                <a href="https://drive.google.com/link-to-your-xml-4" target="_blank">AE Quality Sharpen CC</a>
+                <span class="description">বিবরণ: আফটার ইফেক্ট-এর মতো শার্পেনিং এবং কালার কারেকশন।</span>
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="link-section">
+        <h2>★ অন্যান্য রিসোর্স ও সোশ্যাল</h2>
+        <div class="link-grid">
+            
+            <div class="link-card">
+                <span class="link-type">YOUTUBE</span>
+                <a href="https://youtube.com/your-channel-link" target="_blank">আমার নতুন টিউটোরিয়াল</a>
+                <span class="description">বিবরণ: প্রতি সপ্তাহে নতুন Alight Motion টিপস ও ট্রিকস।</span>
+            </div>
+
+            <div class="link-card">
+                <span class="link-type">TELEGRAM / DRIVE</span>
+                <a href="https://t.me/your-group-link" target="_blank">সম্পূর্ণ ফন্ট প্যাক ডাউনলোড করুন</a>
+                <span class="description">বিবরণ: সমস্ত ট্রেন্ডিং বাংলা ও ইংরেজি ফন্টের কালেকশন।</span>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
 </body>
 </html>
