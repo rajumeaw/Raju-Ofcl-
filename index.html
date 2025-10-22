@@ -1,184 +1,198 @@
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>⚡ Premium Presets | Alight Motion XML & Links ⚡</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
-    
-    <style>
-        :root {
-            --primary-color: #00e676; /* অ্যাকসেন্ট কালার (সবুজ বা আপনার পছন্দ মতো) */
-            --bg-color: #1a1a2e; /* ডার্ক ব্যাকগ্রাউন্ড */
-            --card-bg: #22223b; /* কার্ডের ব্যাকগ্রাউন্ড */
-            --text-color: #f0f0f0;
-            --secondary-text: #a0a0c0;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RAJU MEAW - PREMIUM INDEX</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
 
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-        }
+body {
+    margin: 0;
+    font-family: 'Orbitron', sans-serif;
+    background: linear-gradient(270deg, #ff4d6d, #00ffd5, #ffcc00);
+    background-size: 600% 600%;
+    animation: gradientBG 15s ease infinite;
+    color: #fff;
+}
 
-        .container {
-            width: 90%;
-            max-width: 900px;
-            padding: 30px;
-            background: var(--bg-color);
-        }
+@keyframes gradientBG {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
 
-        .header {
-            text-align: center;
-            margin-bottom: 40px;
-            border-bottom: 2px solid var(--primary-color);
-            padding-bottom: 20px;
-        }
+.header {
+    text-align: center;
+    padding: 40px 20px 20px;
+}
 
-        .header h1 {
-            font-size: 2.5em;
-            color: var(--primary-color);
-            font-weight: 800;
-            letter-spacing: 1px;
-            margin: 0;
-        }
+.profile-pic {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    border: 5px solid #fff;
+    object-fit: cover;
+    box-shadow: 0 0 30px #00ffd5, 0 0 50px #ff4d6d;
+    transition: 0.5s;
+}
 
-        .link-section {
-            margin-bottom: 30px;
-        }
+.profile-pic:hover {
+    transform: rotate(10deg) scale(1.05);
+    box-shadow: 0 0 50px #ff4d6d, 0 0 70px #00ffd5;
+}
 
-        .link-section h2 {
-            font-size: 1.8em;
-            color: var(--text-color);
-            border-left: 5px solid var(--primary-color);
-            padding-left: 15px;
-            margin-bottom: 20px;
-            font-weight: 600;
-        }
+.name {
+    margin-top: 20px;
+    font-size: 3em;
+    font-weight: bold;
+    letter-spacing: 3px;
+    background: linear-gradient(45deg, #00ffd5, #ff4d6d, #ffcc00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 15px #000;
+}
 
-        .link-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
+.social-links {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
 
-        .link-card {
-            background: var(--card-bg);
-            padding: 20px;
-            border-radius: 12px;
-            transition: transform 0.3s, box-shadow 0.3s;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-            border: 1px solid rgba(0, 230, 118, 0.2); /* হালকা বর্ডার */
-        }
+.social-links a {
+    color: #fff;
+    font-size: 1.8em;
+    transition: 0.3s;
+    text-shadow: 0 0 10px #000;
+}
 
-        .link-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0, 230, 118, 0.2);
-        }
+.social-links a:hover {
+    transform: scale(1.4) rotate(10deg);
+    color: #ffcc00;
+}
 
-        .link-card a {
-            color: var(--primary-color);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.2em;
-            display: block;
-            margin-bottom: 5px;
-        }
+.section {
+    margin: 40px 0;
+    text-align: center;
+}
 
-        .link-card a:hover {
-            text-decoration: underline;
-        }
+.section h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #00ffd5;
+    text-shadow: 2px 2px 10px #000;
+}
 
-        .link-card .link-type {
-            font-size: 0.8em;
-            color: #ff4081; /* XML/Preset এর জন্য আলাদা কালার */
-            font-weight: 600;
-            display: block;
-            margin-bottom: 5px;
-        }
-        
-        .link-card .description {
-            font-size: 0.9em;
-            color: var(--secondary-text);
-        }
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 0 20px 40px;
+}
 
-        /* Responsive Design */
-        @media (max-width: 600px) {
-            .header h1 {
-                font-size: 2em;
-            }
-            .link-section h2 {
-                font-size: 1.5em;
-            }
-            .link-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+.link-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: rgba(255,255,255,0.05);
+    padding: 20px 30px;
+    width: 250px;
+    border-radius: 20px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.2em;
+    font-weight: bold;
+    box-shadow: 0 0 20px rgba(255,255,255,0.2);
+    transition: 0.5s;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0);}
+    50% { transform: translateY(-10px);}
+}
+
+.link-card i {
+    font-size: 1.8em;
+    color: #ffcc00;
+    transition: 0.5s;
+}
+
+.link-card:hover {
+    transform: scale(1.1) rotate(-2deg);
+    background: rgba(255,255,255,0.15);
+    box-shadow: 0 0 40px #00ffd5, 0 0 60px #ff4d6d;
+    color: #00ffd5;
+}
+
+.link-card:hover i {
+    color: #00ffd5;
+}
+
+@media(max-width:600px){
+    .link-card { width: 90%; }
+}
+</style>
 </head>
 <body>
 
-<div class="container">
-    <div class="header">
-        <h1>⚡ আমার সব প্রিমিয়াম প্রিসেট ও লিঙ্ক ⚡</h1>
+<div class="header">
+    <img src="your-photo.jpg" alt="RAJU MEAW" class="profile-pic">
+    <div class="name">RAJU MEAW</div>
+    <div class="social-links">
+        <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://t.me/raju_meaw" target="_blank"><i class="fab fa-telegram"></i></a>
+        <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
     </div>
+</div>
 
-    <div class="link-section">
-        <h2>★ Alight Motion (XML / Preset)</h2>
-        <div class="link-grid">
-            
-            <div class="link-card">
-                <span class="link-type">XML FILE</span>
-                <a href="https://drive.google.com/file/d/10vT3LRxE_rt6M-xSlcbRbRLqeIkDoTkI/view?usp=drivesdk" target="_blank">PREMIUM MAP CC</a>
-                <span class="description">বিবরণ: সেরা ডার্ক কালার গ্রেডিং, যেকোনো এডিটের জন্য পারফেক্ট।</span>
-            </div>
-            
-            <div class="link-card">
-                <span class="link-type">ALIGHT LINK</span>
-                <a href="https://alight.link/your-alight-link-2" target="_blank">Viral Shake Effect (V3)</a>
-                <span class="description">বিবরণ: ইনস্টাগ্রাম রিলসের জন্য এই ভাইরাল শেকটি ব্যবহার করুন।</span>
-            </div>
-            
-            <div class="link-card">
-                <span class="link-type">XML FILE</span>
-                <a href="https://drive.google.com/link-to-your-xml-3" target="_blank">PREMIUM APPS</a>
-                <span class="description">বিবরণ: স্লো-মোশন ভিডিও এর জন্য সেরা ভেলোসিটি ইফেক্ট।</span>
-            </div>
-            
-            <div class="link-card">
-                <span class="link-type">XML FILE</span>
-                <a href="https://drive.google.com/link-to-your-xml-4" target="_blank">PREMIUM MAX LOBBY CC</a>
-                <span class="description">বিবরণ: আফটার ইফেক্ট-এর মতো শার্পেনিং এবং কালার কারেকশন।</span>
-            </div>
-            
-        </div>
+<!-- Category 1: Alight Motion XML -->
+<div class="section">
+    <h2>Alight Motion XML</h2>
+    <div class="container">
+        <a href="https://example.com/alightmotion1.xml" class="link-card" target="_blank"><i class="fas fa-film"></i> XML 1</a>
+        <a href="https://example.com/alightmotion2.xml" class="link-card" target="_blank"><i class="fas fa-film"></i> XML 2</a>
+        <a href="https://example.com/alightmotion3.xml" class="link-card" target="_blank"><i class="fas fa-film"></i> XML 3</a>
     </div>
+</div>
 
-    <div class="link-section">
-        <h2>★ অন্যান্য রিসোর্স ও সোশ্যাল</h2>
-        <div class="link-grid">
-            
-            <div class="link-card">
-                <span class="link-type">YOUTUBE</span>
-                <a href="https://youtube.com/your-channel-link" target="_blank">আনার YouTube Chanel </a>
-                <span class="description">বিবরণ: প্রতি সপ্তাহে নতুন Alight Motion টিপস ও ট্রিকস।</span>
-            </div>
+<!-- Category 2: Premium Map CC -->
+<div class="section">
+    <h2>Premium Map CC</h2>
+    <div class="container">
+        <a href="https://example.com/premium-map1" class="link-card" target="_blank"><i class="fas fa-map"></i> Map 1</a>
+        <a href="https://example.com/premium-map2" class="link-card" target="_blank"><i class="fas fa-map"></i> Map 2</a>
+    </div>
+</div>
 
-            <div class="link-card">
-                <span class="link-type">TELEGRAM / DRIVE</span>
-                <a href="https://t.me/your-group-link" target="_blank">সম্পূর্ণ ফন্ট প্যাক ডাউনলোড করুন</a>
-                <span class="description">বিবরণ: সমস্ত ট্রেন্ডিং বাংলা ও ইংরেজি ফন্টের কালেকশন।</span>
-            </div>
-            
-        </div>
+<!-- Category 3: Premium Max Lobby CC -->
+<div class="section">
+    <h2>Premium Max Lobby CC</h2>
+    <div class="container">
+        <a href="https://example.com/max-lobby1" class="link-card" target="_blank"><i class="fas fa-gamepad"></i> Lobby 1</a>
+        <a href="https://example.com/max-lobby2" class="link-card" target="_blank"><i class="fas fa-gamepad"></i> Lobby 2</a>
+    </div>
+</div>
+
+<!-- Category 4: Premium APK -->
+<div class="section">
+    <h2>Premium APK</h2>
+    <div class="container">
+        <a href="https://example.com/apk1" class="link-card" target="_blank"><i class="fas fa-mobile-alt"></i> APK 1</a>
+        <a href="https://example.com/apk2" class="link-card" target="_blank"><i class="fas fa-mobile-alt"></i> APK 2</a>
+    </div>
+</div>
+
+<!-- Category 5: Premium Lobby CC -->
+<div class="section">
+    <h2>Premium Lobby CC</h2>
+    <div class="container">
+        <a href="https://example.com/lobby1" class="link-card" target="_blank"><i class="fas fa-door-open"></i> Lobby 1</a>
+        <a href="https://example.com/lobby2" class="link-card" target="_blank"><i class="fas fa-door-open"></i> Lobby 2</a>
     </div>
 </div>
 
