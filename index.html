@@ -3,55 +3,56 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RAJU MEAW - PREMIUM INDEX</title>
+<title>RAJU MEAW - ULTRA PREMIUM INDEX</title>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
 
+/* Background + Particles */
 body {
     margin: 0;
     font-family: 'Orbitron', sans-serif;
-    background: linear-gradient(270deg, #ff4d6d, #00ffd5, #ffcc00);
-    background-size: 600% 600%;
-    animation: gradientBG 15s ease infinite;
-    color: #fff;
+    background: #0f0c29;
+    overflow-x: hidden;
+}
+canvas#bgCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
 }
 
-@keyframes gradientBG {
-    0% {background-position: 0% 50%;}
-    50% {background-position: 100% 50%;}
-    100% {background-position: 0% 50%;}
-}
-
+/* Header */
 .header {
     text-align: center;
     padding: 50px 20px 20px;
 }
 
 .profile-pic {
-    width: 170px;
-    height: 170px;
+    width: 180px;
+    height: 180px;
     border-radius: 50%;
     border: 5px solid #fff;
     object-fit: cover;
-    box-shadow: 0 0 40px #00ffd5, 0 0 60px #ff4d6d;
+    box-shadow: 0 0 60px #00ffd5, 0 0 80px #ff4d6d;
     transition: 0.5s;
 }
-
 .profile-pic:hover {
-    transform: rotate(10deg) scale(1.05);
-    box-shadow: 0 0 60px #ff4d6d, 0 0 80px #00ffd5;
+    transform: rotate(10deg) scale(1.08);
+    box-shadow: 0 0 80px #ff4d6d, 0 0 100px #00ffd5;
 }
 
 .name {
     margin-top: 25px;
-    font-size: 3em;
+    font-size: 3.2em;
     font-weight: bold;
     letter-spacing: 3px;
     background: linear-gradient(45deg, #00ffd5, #ff4d6d, #ffcc00);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-shadow: 2px 2px 15px #000;
+    text-shadow: 2px 2px 20px #000;
 }
 
 .social-links {
@@ -60,76 +61,77 @@ body {
     justify-content: center;
     gap: 25px;
 }
-
 .social-links a {
     color: #fff;
     font-size: 1.8em;
     transition: 0.3s;
     text-shadow: 0 0 10px #000;
 }
-
 .social-links a:hover {
-    transform: scale(1.4) rotate(10deg);
+    transform: scale(1.4) rotate(15deg);
     color: #ffcc00;
 }
 
+/* Sections & Cards */
 .section {
-    margin: 40px 0;
+    margin: 50px 0;
     text-align: center;
 }
-
 .section h2 {
-    font-size: 2em;
-    margin-bottom: 20px;
+    font-size: 2.2em;
+    margin-bottom: 25px;
     color: #00ffd5;
-    text-shadow: 2px 2px 10px #000;
+    text-shadow: 2px 2px 15px #000;
 }
 
 .container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
-    padding: 0 20px 40px;
+    gap: 25px;
+    padding: 0 20px 50px;
 }
 
 .link-card {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 20px;
     background: rgba(255,255,255,0.05);
-    padding: 20px 30px;
-    width: 250px;
-    border-radius: 50px; /* Rounded card for premium look */
+    padding: 25px 35px;
+    width: 260px;
+    border-radius: 50px;
     text-decoration: none;
     color: #fff;
-    font-size: 1.2em;
+    font-size: 1.25em;
     font-weight: bold;
     box-shadow: 0 0 25px rgba(255,255,255,0.2);
     transition: 0.5s;
-    animation: float 3s ease-in-out infinite;
-}
-
-@keyframes float {
-    0%, 100% { transform: translateY(0);}
-    50% { transform: translateY(-12px);}
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    animation: float3D 4s ease-in-out infinite;
 }
 
 .link-card i {
-    font-size: 1.8em;
+    font-size: 2em;
     color: #ffcc00;
     transition: 0.5s;
 }
 
 .link-card:hover {
-    transform: scale(1.12) rotate(-2deg);
-    background: rgba(255,255,255,0.15);
-    box-shadow: 0 0 50px #00ffd5, 0 0 70px #ff4d6d;
+    transform: scale(1.15) rotateY(10deg);
+    background: rgba(255,255,255,0.18);
+    box-shadow: 0 0 60px #00ffd5, 0 0 90px #ff4d6d;
     color: #00ffd5;
 }
 
 .link-card:hover i {
     color: #00ffd5;
+}
+
+@keyframes float3D {
+    0%, 100% { transform: translateY(0px) rotateY(0deg);}
+    50% { transform: translateY(-15px) rotateY(5deg);}
 }
 
 @media(max-width:600px){
@@ -138,6 +140,8 @@ body {
 </style>
 </head>
 <body>
+
+<canvas id="bgCanvas"></canvas>
 
 <div class="header">
     <img src="your-photo.jpg" alt="RAJU MEAW" class="profile-pic">
@@ -150,7 +154,7 @@ body {
     </div>
 </div>
 
-<!-- Category 1: Alight Motion XML -->
+<!-- Example Section -->
 <div class="section">
     <h2>Alight Motion XML</h2>
     <div class="container">
@@ -160,41 +164,47 @@ body {
     </div>
 </div>
 
-<!-- Category 2: Premium Map CC -->
-<div class="section">
-    <h2>Premium Map CC</h2>
-    <div class="container">
-        <a href="https://example.com/premium-map1" class="link-card" target="_blank"><i class="fas fa-map"></i> Map 1</a>
-        <a href="https://example.com/premium-map2" class="link-card" target="_blank"><i class="fas fa-map"></i> Map 2</a>
-    </div>
-</div>
+<!-- Additional sections like Premium Map CC, Max Lobby, APK, Lobby -->
+<!-- Copy the section block above and update links/icons -->
 
-<!-- Category 3: Premium Max Lobby CC -->
-<div class="section">
-    <h2>Premium Max Lobby CC</h2>
-    <div class="container">
-        <a href="https://example.com/max-lobby1" class="link-card" target="_blank"><i class="fas fa-gamepad"></i> Lobby 1</a>
-        <a href="https://example.com/max-lobby2" class="link-card" target="_blank"><i class="fas fa-gamepad"></i> Lobby 2</a>
-    </div>
-</div>
+<script>
+// Simple particles background
+const canvas = document.getElementById('bgCanvas');
+const ctx = canvas.getContext('2d');
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
 
-<!-- Category 4: Premium APK -->
-<div class="section">
-    <h2>Premium APK</h2>
-    <div class="container">
-        <a href="https://example.com/apk1" class="link-card" target="_blank"><i class="fas fa-mobile-alt"></i> APK 1</a>
-        <a href="https://example.com/apk2" class="link-card" target="_blank"><i class="fas fa-mobile-alt"></i> APK 2</a>
-    </div>
-</div>
+let particles = [];
+for(let i=0;i<120;i++){
+    particles.push({
+        x: Math.random()*canvas.width,
+        y: Math.random()*canvas.height,
+        r: Math.random()*2+1,
+        dx: (Math.random()-0.5)*1.5,
+        dy: (Math.random()-0.5)*1.5
+    });
+}
 
-<!-- Category 5: Premium Lobby CC -->
-<div class="section">
-    <h2>Premium Lobby CC</h2>
-    <div class="container">
-        <a href="https://example.com/lobby1" class="link-card" target="_blank"><i class="fas fa-door-open"></i> Lobby 1</a>
-        <a href="https://example.com/lobby2" class="link-card" target="_blank"><i class="fas fa-door-open"></i> Lobby 2</a>
-    </div>
-</div>
+function animateParticles(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    for(let p of particles){
+        ctx.beginPath();
+        ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+        ctx.fillStyle = 'rgba(255,255,255,0.6)';
+        ctx.fill();
+        p.x += p.dx;
+        p.y += p.dy;
+        if(p.x>canvas.width) p.x=0;
+        if(p.x<0) p.x=canvas.width;
+        if(p.y>canvas.height) p.y=0;
+        if(p.y<0) p.y=canvas.height;
+    }
+    requestAnimationFrame(animateParticles);
+}
+animateParticles();
+
+window.addEventListener('resize',()=>{canvas.width=window.innerWidth; canvas.height=window.innerHeight;});
+</script>
 
 </body>
 </html>
