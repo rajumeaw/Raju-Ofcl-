@@ -1,210 +1,258 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bn">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RAJU MEAW - ULTRA PREMIUM INDEX</title>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Premium Profile</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        /* আপনার দেওয়া CSS কোড শুরু */
+        
+        /* Poppins ফন্ট ইমপোর্ট করা হলো */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
-/* Background + Particles */
-body {
-    margin: 0;
-    font-family: 'Orbitron', sans-serif;
-    background: #0f0c29;
-    overflow-x: hidden;
-}
-canvas#bgCanvas {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-}
+        /* অ্যানিমেশনের জন্য মূল কালার ভেরিয়েবলস (আপনি আপনার পছন্দমতো রং পরিবর্তন করতে পারেন) */
+        :root {
+            --bg-color-1: #0f0c29; /* ডিপ ব্লু */
+            --bg-color-2: #3a2b5e; /* ডিপ পার্পল */
+            --highlight-color: #a76ff5; /* নিয়ন হাইলাইট কালার */
+            --card-bg: rgba(255, 255, 255, 0.05); /* ট্রান্সপারেন্ট কার্ড ব্যাকগ্রাউন্ড */
+            --text-color: #f0f0f0;
+            --border-color: rgba(255, 255, 255, 0.1);
+        }
 
-/* Header */
-.header {
-    text-align: center;
-    padding: 50px 20px 20px;
-}
+        /* মূল বডি স্টাইল */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text-color);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* নিশ্চিত করুন যে body-এর overflow নেই */
+            overflow: hidden; 
+            position: relative;
+            background: var(--bg-color-1); /* ডিফল্ট ডার্ক ব্যাকগ্রাউন্ড */
+        }
 
-.profile-pic {
-    width: 180px;
-    height: 180px;
-    border-radius: 50%;
-    border: 5px solid #fff;
-    object-fit: cover;
-    box-shadow: 0 0 60px #00ffd5, 0 0 80px #ff4d6d;
-    transition: 0.5s;
-}
-.profile-pic:hover {
-    transform: rotate(10deg) scale(1.08);
-    box-shadow: 0 0 80px #ff4d6d, 0 0 100px #00ffd5;
-}
+        /* ঘূর্ণায়মান ব্যাকগ্রাউন্ড লেয়ার */
+        .animated-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            /* স্ক্রিনের চেয়ে অনেক বড় আকার, যাতে ঘোরার সময় কিনারা দেখা না যায় */
+            width: 300%; 
+            height: 300%;
+            
+            /* গ্রেডিয়েন্ট তৈরি, যা নীল থেকে বেগুনি এবং আবার নীলের দিকে যাচ্ছে */
+            background: linear-gradient(
+                45deg,
+                var(--bg-color-1) 0%,
+                var(--bg-color-2) 50%,
+                var(--bg-color-1) 100%
+            );
+            
+            /* ব্যাকগ্রাউন্ড ঘোরানোর জন্য অ্যানিমেশন */
+            animation: rotateBG 20s linear infinite; /* ২০ সেকেন্ডে একবার পূর্ণ ঘূর্ণন */
+            z-index: -1;
+            
+            /* ঘূর্ণনটিকে অ্যাবস্ট্রাক্ট এবং মসৃণ গ্লো এফেক্ট দেওয়ার জন্য ব্লার */
+            filter: blur(100px); 
+            opacity: 0.8;
+        }
 
-.name {
-    margin-top: 25px;
-    font-size: 3.2em;
-    font-weight: bold;
-    letter-spacing: 3px;
-    background: linear-gradient(45deg, #00ffd5, #ff4d6d, #ffcc00);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-shadow: 2px 2px 20px #000;
-}
+        /* অ্যানিমেশন কিফ্রেম */
+        @keyframes rotateBG {
+            from {
+                /* শুরু: কোনো ঘূর্ণন নেই, তবে গ্রেডিয়েন্টকে প্রসারিত রাখা হলো */
+                transform: rotate(0deg) scale(1.5);
+            }
+            to {
+                /* শেষ: ৩৬০ ডিগ্রি ঘূর্ণন */
+                transform: rotate(360deg) scale(1.5);
+            }
+        }
+        
+        /* অন্যান্য কম্পোনেন্ট স্টাইল (যেমন কার্ড, লিঙ্ক ইত্যাদি) */
 
-.social-links {
-    margin-top: 15px;
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-}
-.social-links a {
-    color: #fff;
-    font-size: 1.8em;
-    transition: 0.3s;
-    text-shadow: 0 0 10px #000;
-}
-.social-links a:hover {
-    transform: scale(1.4) rotate(15deg);
-    color: #ffcc00;
-}
+        /* মূল কন্টেইনার */
+        .profile-container {
+            width: 90%;
+            max-width: 400px;
+            padding: 20px 0;
+            z-index: 10;
+        }
+        
+        /* প্রোফাইল ছবি এবং নাম */
+        .profile-header {
+            text-align: center;
+            margin-bottom: 25px;
+        }
 
-/* Sections & Cards */
-.section {
-    margin: 50px 0;
-    text-align: center;
-}
-.section h2 {
-    font-size: 2.2em;
-    margin-bottom: 25px;
-    color: #00ffd5;
-    text-shadow: 2px 2px 15px #000;
-}
+        .profile-image-container {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 10px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid var(--highlight-color);
+            box-shadow: 0 0 10px var(--highlight-color);
+        }
+        
+        .profile-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(100%);
+        }
 
-.container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 25px;
-    padding: 0 20px 50px;
-}
+        .profile-header h2 {
+            margin: 0;
+            font-size: 1.6rem;
+            color: var(--text-color);
+            letter-spacing: 2px;
+            text-shadow: 0 0 5px var(--highlight-color);
+        }
+        
+        .profile-header p {
+            margin: 5px 0 0;
+            font-size: 0.8rem;
+            opacity: 0.7;
+        }
+        
+        /* কার্ডের স্টাইল (গ্লাস ম্যোরফিজম) */
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+            backdrop-filter: blur(10px); 
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
 
-.link-card {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-    background: rgba(255,255,255,0.05);
-    padding: 25px 35px;
-    width: 260px;
-    border-radius: 50px;
-    text-decoration: none;
-    color: #fff;
-    font-size: 1.25em;
-    font-weight: bold;
-    box-shadow: 0 0 25px rgba(255,255,255,0.2);
-    transition: 0.5s;
-    transform-style: preserve-3d;
-    perspective: 1000px;
-    animation: float3D 4s ease-in-out infinite;
-}
+        .section-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--highlight-color);
+            margin-top: 0;
+            padding-bottom: 5px;
+            border-bottom: 2px solid var(--highlight-color); 
+            margin-bottom: 15px;
+        }
+        
+        /* আইকন এবং লিঙ্ক স্টাইল: "line bai line" */
+        .icon-list a {
+            display: flex;
+            align-items: center;
+            padding: 12px 0;
+            color: var(--text-color);
+            text-decoration: none;
+            transition: color 0.3s, transform 0.3s;
+            border-bottom: 1px dashed var(--border-color);
+        }
 
-.link-card i {
-    font-size: 2em;
-    color: #ffcc00;
-    transition: 0.5s;
-}
+        .icon-list a:last-child {
+            border-bottom: none;
+        }
 
-.link-card:hover {
-    transform: scale(1.15) rotateY(10deg);
-    background: rgba(255,255,255,0.18);
-    box-shadow: 0 0 60px #00ffd5, 0 0 90px #ff4d6d;
-    color: #00ffd5;
-}
+        .icon-list a:hover {
+            color: var(--highlight-color);
+            transform: translateX(5px); 
+        }
 
-.link-card:hover i {
-    color: #00ffd5;
-}
+        .icon-list i {
+            font-size: 1.3rem;
+            margin-right: 15px;
+            width: 30px; 
+            text-align: center;
+            /* প্রিমিয়াম গ্লো এফেক্ট */
+            text-shadow: 0 0 7px var(--highlight-color), 0 0 5px var(--highlight-color);
+        }
 
-@keyframes float3D {
-    0%, 100% { transform: translateY(0px) rotateY(0deg);}
-    50% { transform: translateY(-15px) rotateY(5deg);}
-}
+        .link-text {
+            flex-grow: 1;
+            font-weight: 600;
+        }
 
-@media(max-width:600px){
-    .link-card { width: 90%; }
-}
-</style>
+        .link-detail {
+            font-size: 0.8rem;
+            opacity: 0.6;
+        }
+        
+        /* আপনার দেওয়া CSS কোড শেষ */
+    </style>
 </head>
 <body>
 
-<canvas id="bgCanvas"></canvas>
+    <div class="animated-bg"></div>
 
-<div class="header">
-    <img src="your-photo.jpg" alt="RAJU MEAW" class="profile-pic">
-    <div class="name">RAJU MEAW</div>
-    <div class="social-links">
-        <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
-        <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://t.me/raju_meaw" target="_blank"><i class="fab fa-telegram"></i></a>
-        <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+    <div class="profile-container">
+        
+        <div class="profile-header">
+            <div class="profile-image-container">
+                <img src="https://i.ibb.co/L50nLpD/placeholder-profile.jpg" alt="Profile Picture">
+            </div>
+            <h2>MAHBUBULLAH</h2>
+            <p>owner of **CYBER BOT ⚠️ BOT ⚠️ TEAM** 😈</p>
+        </div>
+
+        <div class="card">
+            <h3 class="section-title">ALIGHT MOTION RESOURCES</h3>
+            <div class="icon-list">
+                <a href="#" target="_blank">
+                    <i class="fas fa-file-code"></i>
+                    <span class="link-text">Alight Motion XML File</span>
+                    <span class="link-detail">Download Link</span>
+                </a>
+                <a href="#" target="_blank">
+                    <i class="fas fa-palette"></i>
+                    <span class="link-text">MAP CC Preset</span>
+                    <span class="link-detail">প্রিমিয়াম লুক</span>
+                </a>
+                <a href="#" target="_blank">
+                    <i class="fas fa-brush"></i>
+                    <span class="link-text">MAX LOBBY CC</span>
+                    <span class="link-detail">Exclusive</span>
+                </a>
+                <a href="#" target="_blank">
+                    <i class="fas fa-fill-drip"></i>
+                    <span class="link-text">NORMAL LOBBY CC</span>
+                    <span class="link-detail">All Devices</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="card">
+            <h3 class="section-title">SOCIAL LINKS</h3>
+            <div class="icon-list">
+                <a href="#" target="_blank">
+                    <i class="fab fa-youtube"></i>
+                    <span class="link-text">YouTube Channel</span>
+                    <span class="link-detail">@YourHandle</span>
+                </a>
+                <a href="#" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                    <span class="link-text">Instagram Profile</span>
+                    <span class="link-detail">Follow Me</span>
+                </a>
+                <a href="#" target="_blank">
+                    <i class="fab fa-facebook"></i>
+                    <span class="link-text">Facebook Page/ID</span>
+                    <span class="link-detail">Official</span>
+                </a>
+                <a href="#" target="_blank">
+                    <i class="fab fa-discord"></i>
+                    <span class="link-text">Discord Server</span>
+                    <span class="link-detail">Join Now!</span>
+                </a>
+            </div>
+        </div>
+
     </div>
-</div>
-
-<!-- Example Section -->
-<div class="section">
-    <h2MY PERSONAL CC XML</h2>
-    <div class="container">
-        <a href="https://example.com/alightmotion1.xml" class="link-card" target="_blank"><i class="fas fa-film"></i> MAP CC </a>
-        <a href="https://example.com/alightmotion2.xml" class="link-card" target="_blank"><i class="fas fa-film"></i> MAX LOBBY CC </a>
-        <a href="https://example.com/alightmotion3.xml" class="link-card" target="_blank"><i class="fas fa-film"></i>NORMAL LOBBY CC</a>
-    </div>
-</div>
-
-<!-- Additional sections like Premium Map CC, Max Lobby, APK, Lobby -->
-<!-- Copy the section block above and update links/icons -->
-
-<script>
-// Simple particles background
-const canvas = document.getElementById('bgCanvas');
-const ctx = canvas.getContext('2d');
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-
-let particles = [];
-for(let i=0;i<120;i++){
-    particles.push({
-        x: Math.random()*canvas.width,
-        y: Math.random()*canvas.height,
-        r: Math.random()*2+1,
-        dx: (Math.random()-0.5)*1.5,
-        dy: (Math.random()-0.5)*1.5
-    });
-}
-
-function animateParticles(){
-    ctx.clearRect(0,0,canvas.width,canvas.height);
-    for(let p of particles){
-        ctx.beginPath();
-        ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
-        ctx.fillStyle = 'rgba(255,255,255,0.6)';
-        ctx.fill();
-        p.x += p.dx;
-        p.y += p.dy;
-        if(p.x>canvas.width) p.x=0;
-        if(p.x<0) p.x=canvas.width;
-        if(p.y>canvas.height) p.y=0;
-        if(p.y<0) p.y=canvas.height;
-    }
-    requestAnimationFrame(animateParticles);
-}
-animateParticles();
-
-window.addEventListener('resize',()=>{canvas.width=window.innerWidth; canvas.height=window.innerHeight;});
-</script>
 
 </body>
 </html>
