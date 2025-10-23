@@ -3,75 +3,197 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RAJU MEAW - PREMIUM PROFILE</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <title>RAJU MEAW | প্রিমিয়াম কন্টেন্ট হাব</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Baloo+Da+2:wght@400;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* কাস্টম স্টাইল এবং নিয়ন ইফেক্ট */
+        :root {
+            --neon-blue: #00fff2;
+            --neon-pink: #ff007b;
+            --dark-bg: #0d1117;
+        }
+
+        body {
+            font-family: 'Baloo Da 2', 'Inter', sans-serif; /* বাংলা এবং ইংরেজি উভয় ভাষার জন্য ফন্ট */
+            background-color: var(--dark-bg);
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* স্পেস/পার্টিকেল ব্যাকগ্রাউন্ড ইফেক্ট - ভিডিওর মতো */
+        .bg-particles {
+            background-image: radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px),
+                              radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px),
+                              radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 40px);
+            background-size: 550px 550px, 350px 350px, 250px 250px;
+            background-position: 0 0, 40px 60px, 120px 100px;
+            animation: move-bg 30s infinite linear;
+        }
+        @keyframes move-bg {
+            from { background-position: 0 0, 40px 60px, 120px 100px; }
+            to { background-position: 550px 550px, -310px -290px, -130px -150px; } /* ব্যাকগ্রাউন্ডের নড়াচড়ার জন্য */
+        }
+
+        /* প্রধান টেক্সট গ্লো */
+        .text-glow-premium {
+            text-shadow: 
+                0 0 10px var(--neon-blue), 
+                0 0 20px var(--neon-blue), 
+                0 0 30px var(--neon-pink);
+            letter-spacing: 2px;
+        }
+
+        /* কার্ডের নিয়ন বর্ডার এবং শ্যাডো */
+        .neon-card {
+            background-color: rgba(30, 41, 59, 0.4); /* গাঢ় নীল/ধূসর স্বচ্ছতা */
+            border-radius: 1rem; /* 16px */
+            border: 1px solid rgba(0, 255, 242, 0.3);
+            box-shadow: 0 0 15px rgba(0, 255, 242, 0.5), 0 0 25px rgba(255, 0, 123, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .neon-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 20px var(--neon-blue), 0 0 40px var(--neon-pink);
+        }
+
+        /* বাটনের নিয়ন গ্লো ইফেক্ট */
+        .neon-link-button {
+            transition: all 0.3s ease;
+            box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+        }
+
+        .neon-link-button:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 15px var(--neon-blue), 0 0 25px var(--neon-pink);
+            transform: scale(1.03);
+        }
+        
+        /* প্রোফাইল ছবির নিয়ন রিং */
+        .profile-ring {
+            box-shadow: 0 0 15px var(--neon-blue), 0 0 25px var(--neon-pink), 0 0 35px var(--neon-blue);
+        }
+    </style>
 </head>
-<body>
+<body class="bg-particles text-white min-h-screen p-4 sm:p-8">
 
-    <div class="profile-container">
+    <!-- প্রধান কন্টেইনার -->
+    <div class="max-w-xl mx-auto py-8">
 
-        <header class="profile-header">
-            <div class="profile-picture">
-                <img src="https://sanishtech.com/i/QvUApRdPkbe.png" alt="RAJU MEAW Profile Picture">
+        <!-- প্রোফাইল সেকশন -->
+        <header class="text-center mb-10">
+            <!-- প্রোফাইল ছবি -->
+            <div class="https://sanishtech.com/i/QvUApRdPkbe.png">
+                <img src="https://placehold.co/150x150/0d1117/00fff2?text=R+M" 
+                     alt="RAJU MEAW Profile Picture" 
+                     class="w-36 h-36 object-cover rounded-full border-4 border-transparent"
+                     onerror="this.onerror=null; this.src='https://placehold.co/150x150/0d1117/00fff2?text=RAJU';">
             </div>
-
-            <h1 class="name-bold-style">RAJU MEAW</h1>
-            <p class="tagline">🔥 OWNER 👑𝐃𝐑𝐄𝐀𝐌 𝐄𝐃𝐈𝐓𝐎𝐑 𝐒𝐎𝐂𝐈𝐄𝐓𝐘🌿🐣</p>
+            
+            <!-- নাম এবং পদবী -->
+            <h1 class="text-4xl sm:text-5xl font-extrabold mb-1 text-glow-premium">
+                RAJU MEAW
+            </h1>
+            <p class="text-lg text-gray-300 font-semibold tracking-wider">
+                👑 অফিসিয়াল প্রিমিয়াম কন্টেন্ট হাব | Alight Motion Creator 👑
+            </p>
         </header>
 
-        <section class="social-links">
-            <h2>Social Links</h2>
-            <div class="links-grid">
-                <a href="https://www.facebook.com/share/1M98YmVkjJ/" target="_blank" class="social-icon facebook">
-                    <i class="fab fa-facebook-f"></i> Facebook
+        <!-- সোশ্যাল লিংক সেকশন -->
+        <section class="mb-10 neon-card p-6">
+            <h2 class="text-2xl font-bold mb-5 text-center text-glow-premium">
+                যোগাযোগের মাধ্যম (Social Links)
+            </h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <!-- Facebook Link -->
+                <a href="https://www.facebook.com/share/1M98YmVkjJ/" class="neon-link-button flex flex-col items-center justify-center p-3 rounded-lg bg-gray-700 hover:bg-gray-800 transition duration-300">
+                    <i data-lucide="facebook" class="w-8 h-8 text-blue-400"></i>
+                    <span class="mt-1 text-sm font-medium">Facebook</span>
                 </a>
-                <a href="https://t.me/rajuu_saxy_official" target="_blank" class="social-icon telegram">
-                    <i class="fab fa-telegram-plane"></i> Telegram
+                <!-- Instagram Link -->
+                <a href="https://www.instagram.com/raju_mals12?igsh=dGZnM2FnbnAzOW85" class="neon-link-button flex flex-col items-center justify-center p-3 rounded-lg bg-gray-700 hover:bg-gray-800 transition duration-300">
+                    <i data-lucide="instagram" class="w-8 h-8 text-pink-400"></i>
+                    <span class="mt-1 text-sm font-medium">Instagram</span>
                 </a>
-                <a href="https://www.instagram.com/raju_mals12?igsh=dGZnM2FnbnAzOW85" target="_blank" class="social-icon instagram">
-                    <i class="fab fa-instagram"></i> Instagram
+                <!-- Telegram Link -->
+                <a href="https://t.me/rajuu_saxy_official" class="neon-link-button flex flex-col items-center justify-center p-3 rounded-lg bg-gray-700 hover:bg-gray-800 transition duration-300">
+                    <i data-lucide="send" class="w-8 h-8 text-sky-400"></i>
+                    <span class="mt-1 text-sm font-medium">Telegram</span>
                 </a>
-                <a href="https://wa.me/8801815896135" target="_blank" class="social-icon whatsapp">
-                    <i class="fab fa-whatsapp"></i> WhatsApp
+                <!-- YouTube Link -->
+                <a href="https://youtube.com/@rajuu_meaw?si=6f3GWT7LWK_bxntG" class="neon-link-button flex flex-col items-center justify-center p-3 rounded-lg bg-gray-700 hover:bg-gray-800 transition duration-300">
+                    <i data-lucide="youtube" class="w-8 h-8 text-red-500"></i>
+                    <span class="mt-1 text-sm font-medium">YouTube</span>
                 </a>
-                </div>
+            </div>
         </section>
 
-        <section class="downloads-section">
-            <h2>XML & Premium Resources</h2>
-            
-            <div class="download-item">
-                <i class="fas fa-file-code icon-xml"></i>
-                <a href="YOUR_ALIGHT_MOTION_XML_LINK" target="_blank">PREMIUM XML SHARE LINK</a>
-                <p>Alight Motion XML Share Link</p>
-            </div>
+        <!-- প্রিমিয়াম কন্টেন্ট সেকশন -->
+        <section class="neon-card p-6">
+            <h2 class="text-2xl font-bold mb-5 text-center text-glow-premium">
+                প্রিমিয়াম কন্টেন্ট ডাউনলোড লিংক
+            </h2>
+            <div class="space-y-4">
+                
+                <!-- Alight Motion XML -->
+                <a href="#" class="neon-link-button w-full flex items-center p-4 rounded-lg bg-gray-800 hover:bg-gray-700">
+                    <i data-lucide="code" class="w-6 h-6 mr-3 text-neon-blue"></i>
+                    <span class="flex-grow text-lg font-bold">Alight Motion XML ফাইল</span>
+                    <i data-lucide="download" class="w-5 h-5 ml-auto text-green-400"></i>
+                </a>
+                
+                <!-- PREMIUM MAP CC -->
+                <a href="#" class="neon-link-button w-full flex items-center p-4 rounded-lg bg-gray-800 hover:bg-gray-700">
+                    <i data-lucide="map" class="w-6 h-6 mr-3 text-neon-pink"></i>
+                    <span class="flex-grow text-lg font-bold">PREMIUM MAP CC (কালার কারেকশন)</span>
+                    <i data-lucide="download" class="w-5 h-5 ml-auto text-green-400"></i>
+                </a>
 
-            <div class="download-item">
-                <i class="fas fa-gem icon-cc"></i>
-                <a href="YOUR_PREMIUM_MAP_CC_LINK" target="_blank">PREMIUM MAP CC (CONFIG)</a>
-                <p>High Quality Color Correction</p>
-            </div>
+                <!-- PREMIUM MAX LOBBY CC -->
+                <a href="#" class="neon-link-button w-full flex items-center p-4 rounded-lg bg-gray-800 hover:bg-gray-700">
+                    <i data-lucide="box" class="w-6 h-6 mr-3 text-yellow-400"></i>
+                    <span class="flex-grow text-lg font-bold">PREMIUM MAX LOBBY CC</span>
+                    <i data-lucide="download" class="w-5 h-5 ml-auto text-green-400"></i>
+                </a>
+                
+                <!-- PREMIUM LOBBY CC -->
+                <a href="#" class="neon-link-button w-full flex items-center p-4 rounded-lg bg-gray-800 hover:bg-gray-700">
+                    <i data-lucide="layers-3" class="w-6 h-6 mr-3 text-fuchsia-400"></i>
+                    <span class="flex-grow text-lg font-bold">PREMIUM LOBBY CC</span>
+                    <i data-lucide="download" class="w-5 h-5 ml-auto text-green-400"></i>
+                </a>
 
-            <div class="download-item">
-                <i class="fas fa-gamepad icon-lobby"></i>
-                <a href="YOUR_PREMIUM_LOBBY_CC_LINK" target="_blank">PREMIUM MAX LOBBY CC</a>
-                <p>Best Lobby Color Correction</p>
-            </div>
+                <!-- PREMIUM APK -->
+                <a href="#" class="neon-link-button w-full flex items-center p-4 rounded-lg bg-gray-800 hover:bg-gray-700">
+                    <i data-lucide="zap" class="w-6 h-6 mr-3 text-red-500"></i>
+                    <span class="flex-grow text-lg font-bold">PREMIUM APK ডাউনলোড</span>
+                    <i data-lucide="download" class="w-5 h-5 ml-auto text-green-400"></i>
+                </a>
+                
+                <!-- অন্যান্য অ্যাপ লিংক -->
+                <a href="#" class="neon-link-button w-full flex items-center p-4 rounded-lg bg-gray-800 hover:bg-gray-700">
+                    <i data-lucide="app-window" class="w-6 h-6 mr-3 text-teal-400"></i>
+                    <span class="flex-grow text-lg font-bold">অন্যান্য প্রয়োজনীয় App Link</span>
+                    <i data-lucide="download" class="w-5 h-5 ml-auto text-green-400"></i>
+                </a>
 
-            <div class="download-item">
-                <i class="fas fa-mobile-alt icon-apk"></i>
-                <a href="YOUR_PREMIUM_APK_LINK" target="_blank">PREMIUM APK / APP LINK</a>
-                <p>Modified Application Link</p>
             </div>
-            
-            </section>
+        </section>
 
-        <footer>
-            &copy; 2025 RAJU MEAW | Premium Design
+        <!-- ফুটার -->
+        <footer class="text-center mt-10 text-gray-500">
+            <p class="text-sm">© ২০২৩ RAJU MEAW | সর্বস্বত্ব সংরক্ষিত</p>
         </footer>
 
     </div>
 
+    <!-- আইকন ইনিশিয়ালাইজেশন (Lucide Icons) -->
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
 </html>
