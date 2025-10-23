@@ -1,127 +1,178 @@
-/* বেসিক রিসেট ও ডার্ক থিম সেটআপ */
+/* Import a stylish, bold font for the premium look */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Roboto:wght@400&display=swap');
+
+/* --- General Styling for a Dark, High-Contrast Look --- */
 body {
-    font-family: 'Orbitron', sans-serif; /* সাইবারপাঙ্ক ফন্ট */
-    background-color: #05050f; /* খুব ডার্ক ব্যাকগ্রাউন্ড */
-    color: #e0e0e0; /* হালকা টেক্সট কালার */
+    font-family: 'Roboto', sans-serif;
+    background-color: #0d1117; /* Dark background like the video */
+    color: #ffffff;
     margin: 0;
-    padding: 0;
-    line-height: 1.6;
-    overflow-x: hidden;
-}
-
-/* নিয়ন টেক্সট ইফেক্ট */
-.neon-text {
-    /* সাদা গ্লো যোগ করা হয়েছে */
-    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #00aaff, 0 0 20px #00aaff, 0 0 25px #00aaff;
-    color: #fff;
-    font-weight: 700;
-}
-
-/* সেকশন শিরোনাম */
-.section-title {
-    text-align: center;
-    padding: 40px 0 20px;
-    font-size: 2.5em;
-    border-bottom: 1px solid rgba(0, 170, 255, 0.3); /* হালকা নীল রেখা */
-    margin-bottom: 40px;
-}
-
-/* হিরো সেকশন স্টাইল */
-.hero-section {
-    padding: 80px 20px;
-    text-align: center;
-}
-
-.profile-card {
-    display: inline-block;
-}
-
-.profile-pic {
-    width: 180px;
-    height: 180px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid #00aaff;
-    box-shadow: 0 0 15px #00aaff, 0 0 30px #00aaff; /* ছবির চারপাশে গ্লো */
-    margin-bottom: 15px;
-    filter: grayscale(100%); /* সাদাকালো ইফেক্ট */
-}
-
-.name {
-    font-size: 3em;
-    margin: 5px 0;
-}
-
-.title {
-    font-size: 1.2em;
-    color: #ff00ff; /* ম্যাজেন্টা রঙের নিয়ন ইফেক্ট */
-    text-shadow: 0 0 5px #fff, 0 0 10px #ff00ff;
-}
-
-/* দক্ষতা গ্রিড */
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* রেসপনসিভ কলাম */
-    gap: 30px;
-    padding: 0 50px 80px;
-}
-
-.skill-category {
-    background-color: #1a1a2e; /* কার্ডের সামান্য ডার্কার ব্যাকগ্রাউন্ড */
-    padding: 25px;
-    border-radius: 10px;
-    transition: transform 0.3s, box-shadow 0.3s;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-/* হোভার ইফেক্ট: ভিডিওর মতো কার্ডে আকর্ষণীয় অ্যানিমেশন */
-.skill-category:hover {
-    transform: translateY(-5px);
-}
-
-.skill-category h3 {
-    text-align: center;
-    font-size: 1.5em;
-    margin-bottom: 20px;
-    color: #fff;
-    text-shadow: 0 0 7px #fff;
-}
-
-.skill-list {
+    padding: 20px;
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    gap: 10px;
+    align-items: center;
+    min-height: 100vh;
+    box-sizing: border-box;
 }
 
-.skill-item {
-    background-color: #000;
-    padding: 8px 15px;
-    border-radius: 5px;
+.profile-container {
+    width: 100%;
+    max-width: 450px; /* Adjust width as needed */
+    background: #161b22; /* Slightly lighter dark background for the card */
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.2); /* Light cyan glow effect */
+    border: 1px solid #00ffff50; /* Light border for definition */
+}
+
+/* --- Profile Header (Picture and Name) --- */
+.profile-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.profile-picture {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin: 0 auto 15px;
+    padding: 5px;
+    /* Neon Glow Ring */
+    box-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #00ffff, 0 0 40px #00ffff;
+    background: #0d1117;
+    border: 3px solid #ff00ff;
+}
+
+.profile-picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+}
+
+.name-bold-style {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900; /* Ultra Bold */
+    font-size: 2.2em;
+    color: #00ffff; /* Primary Neon Color */
+    text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff; /* Text Glow */
+    margin: 5px 0 0;
+}
+
+.tagline {
+    font-style: italic;
+    color: #aaaaaa;
+    margin-top: 5px;
+}
+
+/* --- Social Links Section --- */
+.social-links h2, .downloads-section h2 {
+    color: #ff00ff; /* Secondary Neon Color */
+    border-bottom: 2px solid #ff00ff50;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-size: 1.3em;
+}
+
+.links-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns */
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.social-icon i {
+    margin-right: 8px;
+    font-size: 1.2em;
+}
+
+/* Specific Social Media Colors and Glow */
+.facebook { background-color: #1877f2; color: white; }
+.facebook:hover { box-shadow: 0 0 10px #1877f2; transform: translateY(-3px); }
+
+.telegram { background-color: #0088cc; color: white; }
+.telegram:hover { box-shadow: 0 0 10px #0088cc; transform: translateY(-3px); }
+
+.instagram { background-image: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); color: white; }
+.instagram:hover { box-shadow: 0 0 15px #dc2743; transform: translateY(-3px); }
+
+.whatsapp { background-color: #25d366; color: white; }
+.whatsapp:hover { box-shadow: 0 0 10px #25d366; transform: translateY(-3px); }
+
+
+/* --- Downloads Section (XML, CC, APK) --- */
+.download-item {
+    background: #232b38; /* A darker background for each item */
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #00ffff30;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.download-item:hover {
+    border-color: #00ffff;
+    box-shadow: 0 0 15px #00ffff50; /* Hover glow */
+}
+
+.download-item a {
+    color: #00ffff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1em;
+    margin-top: 10px;
+    transition: color 0.3s;
+}
+
+.download-item p {
+    color: #aaaaaa;
     font-size: 0.9em;
-    font-weight: 400;
+    margin: 5px 0 0;
 }
 
-/* নিয়ন গ্লো কালারগুলো */
-.neon-glow-green {
-    box-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;
-}
-.neon-glow-blue {
-    box-shadow: 0 0 10px #00aaff, 0 0 20px #00aaff;
-}
-.neon-glow-magenta {
-    box-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff;
+.download-item i {
+    font-size: 2.5em;
+    margin-bottom: 5px;
+    /* Base icon color */
+    color: #ff00ff;
+    text-shadow: 0 0 5px #ff00ff; /* Icon Glow */
 }
 
-/* রেসপনসিভ ডিজাইন */
-@media (max-width: 768px) {
-    .name {
-        font-size: 2em;
-    }
-    .section-title {
-        font-size: 2em;
-    }
-    .skills-grid {
-        padding: 0 20px 50px;
+/* Specific Icon Colors (Optional) */
+.icon-xml { color: #f0ad4e; }
+.icon-cc { color: #5cb85c; }
+.icon-lobby { color: #d9534f; }
+.icon-apk { color: #5bc0de; }
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    color: #555;
+    font-size: 0.8em;
+    margin-top: 30px;
+    padding-top: 15px;
+    border-top: 1px dashed #333;
+}
+
+/* --- Responsive adjustments (for smaller screens) --- */
+@media (max-width: 600px) {
+    .links-grid {
+        grid-template-columns: 1fr; /* Single column on very small screens */
     }
 }
