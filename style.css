@@ -1,0 +1,127 @@
+/* বেসিক রিসেট ও ডার্ক থিম সেটআপ */
+body {
+    font-family: 'Orbitron', sans-serif; /* সাইবারপাঙ্ক ফন্ট */
+    background-color: #05050f; /* খুব ডার্ক ব্যাকগ্রাউন্ড */
+    color: #e0e0e0; /* হালকা টেক্সট কালার */
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* নিয়ন টেক্সট ইফেক্ট */
+.neon-text {
+    /* সাদা গ্লো যোগ করা হয়েছে */
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #00aaff, 0 0 20px #00aaff, 0 0 25px #00aaff;
+    color: #fff;
+    font-weight: 700;
+}
+
+/* সেকশন শিরোনাম */
+.section-title {
+    text-align: center;
+    padding: 40px 0 20px;
+    font-size: 2.5em;
+    border-bottom: 1px solid rgba(0, 170, 255, 0.3); /* হালকা নীল রেখা */
+    margin-bottom: 40px;
+}
+
+/* হিরো সেকশন স্টাইল */
+.hero-section {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.profile-card {
+    display: inline-block;
+}
+
+.profile-pic {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #00aaff;
+    box-shadow: 0 0 15px #00aaff, 0 0 30px #00aaff; /* ছবির চারপাশে গ্লো */
+    margin-bottom: 15px;
+    filter: grayscale(100%); /* সাদাকালো ইফেক্ট */
+}
+
+.name {
+    font-size: 3em;
+    margin: 5px 0;
+}
+
+.title {
+    font-size: 1.2em;
+    color: #ff00ff; /* ম্যাজেন্টা রঙের নিয়ন ইফেক্ট */
+    text-shadow: 0 0 5px #fff, 0 0 10px #ff00ff;
+}
+
+/* দক্ষতা গ্রিড */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* রেসপনসিভ কলাম */
+    gap: 30px;
+    padding: 0 50px 80px;
+}
+
+.skill-category {
+    background-color: #1a1a2e; /* কার্ডের সামান্য ডার্কার ব্যাকগ্রাউন্ড */
+    padding: 25px;
+    border-radius: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* হোভার ইফেক্ট: ভিডিওর মতো কার্ডে আকর্ষণীয় অ্যানিমেশন */
+.skill-category:hover {
+    transform: translateY(-5px);
+}
+
+.skill-category h3 {
+    text-align: center;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    color: #fff;
+    text-shadow: 0 0 7px #fff;
+}
+
+.skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.skill-item {
+    background-color: #000;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 0.9em;
+    font-weight: 400;
+}
+
+/* নিয়ন গ্লো কালারগুলো */
+.neon-glow-green {
+    box-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;
+}
+.neon-glow-blue {
+    box-shadow: 0 0 10px #00aaff, 0 0 20px #00aaff;
+}
+.neon-glow-magenta {
+    box-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff;
+}
+
+/* রেসপনসিভ ডিজাইন */
+@media (max-width: 768px) {
+    .name {
+        font-size: 2em;
+    }
+    .section-title {
+        font-size: 2em;
+    }
+    .skills-grid {
+        padding: 0 20px 50px;
+    }
+}
