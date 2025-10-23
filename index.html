@@ -3,256 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Premium Profile</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    
-    <style>
-        /* আপনার দেওয়া CSS কোড শুরু */
-        
-        /* Poppins ফন্ট ইমপোর্ট করা হলো */
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
-
-        /* অ্যানিমেশনের জন্য মূল কালার ভেরিয়েবলস (আপনি আপনার পছন্দমতো রং পরিবর্তন করতে পারেন) */
-        :root {
-            --bg-color-1: #0f0c29; /* ডিপ ব্লু */
-            --bg-color-2: #3a2b5e; /* ডিপ পার্পল */
-            --highlight-color: #a76ff5; /* নিয়ন হাইলাইট কালার */
-            --card-bg: rgba(255, 255, 255, 0.05); /* ট্রান্সপারেন্ট কার্ড ব্যাকগ্রাউন্ড */
-            --text-color: #f0f0f0;
-            --border-color: rgba(255, 255, 255, 0.1);
-        }
-
-        /* মূল বডি স্টাইল */
-        body {
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            padding: 0;
-            color: var(--text-color);
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            /* নিশ্চিত করুন যে body-এর overflow নেই */
-            overflow: hidden; 
-            position: relative;
-            background: var(--bg-color-1); /* ডিফল্ট ডার্ক ব্যাকগ্রাউন্ড */
-        }
-
-        /* ঘূর্ণায়মান ব্যাকগ্রাউন্ড লেয়ার */
-        .animated-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            /* স্ক্রিনের চেয়ে অনেক বড় আকার, যাতে ঘোরার সময় কিনারা দেখা না যায় */
-            width: 300%; 
-            height: 300%;
-            
-            /* গ্রেডিয়েন্ট তৈরি, যা নীল থেকে বেগুনি এবং আবার নীলের দিকে যাচ্ছে */
-            background: linear-gradient(
-                45deg,
-                var(--bg-color-1) 0%,
-                var(--bg-color-2) 50%,
-                var(--bg-color-1) 100%
-            );
-            
-            /* ব্যাকগ্রাউন্ড ঘোরানোর জন্য অ্যানিমেশন */
-            animation: rotateBG 20s linear infinite; /* ২০ সেকেন্ডে একবার পূর্ণ ঘূর্ণন */
-            z-index: -1;
-            
-            /* ঘূর্ণনটিকে অ্যাবস্ট্রাক্ট এবং মসৃণ গ্লো এফেক্ট দেওয়ার জন্য ব্লার */
-            filter: blur(100px); 
-            opacity: 0.8;
-        }
-
-        /* অ্যানিমেশন কিফ্রেম */
-        @keyframes rotateBG {
-            from {
-                /* শুরু: কোনো ঘূর্ণন নেই, তবে গ্রেডিয়েন্টকে প্রসারিত রাখা হলো */
-                transform: rotate(0deg) scale(1.5);
-            }
-            to {
-                /* শেষ: ৩৬০ ডিগ্রি ঘূর্ণন */
-                transform: rotate(360deg) scale(1.5);
-            }
-        }
-        
-        /* অন্যান্য কম্পোনেন্ট স্টাইল (যেমন কার্ড, লিঙ্ক ইত্যাদি) */
-
-        /* মূল কন্টেইনার */
-        .profile-container {
-            width: 90%;
-            max-width: 400px;
-            padding: 20px 0;
-            z-index: 10;
-        }
-        
-        /* প্রোফাইল ছবি এবং নাম */
-        .profile-header {
-            text-align: center;
-            margin-bottom: 25px;
-        }
-
-        .profile-image-container {
-            width: 120px;
-            height: 120px;
-            margin: 0 auto 10px;
-            border-radius: 50%;
-            overflow: hidden;
-            border: 3px solid var(--highlight-color);
-            box-shadow: 0 0 10px var(--highlight-color);
-        }
-        
-        .profile-image-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            filter: grayscale(100%);
-        }
-
-        .profile-header h2 {
-            margin: 0;
-            font-size: 1.6rem;
-            color: var(--text-color);
-            letter-spacing: 2px;
-            text-shadow: 0 0 5px var(--highlight-color);
-        }
-        
-        .profile-header p {
-            margin: 5px 0 0;
-            font-size: 0.8rem;
-            opacity: 0.7;
-        }
-        
-        /* কার্ডের স্টাইল (গ্লাস ম্যোরফিজম) */
-        .card {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 15px;
-            padding: 20px;
-            margin-bottom: 20px;
-            backdrop-filter: blur(10px); 
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-        }
-
-        .section-title {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: var(--highlight-color);
-            margin-top: 0;
-            padding-bottom: 5px;
-            border-bottom: 2px solid var(--highlight-color); 
-            margin-bottom: 15px;
-        }
-        
-        /* আইকন এবং লিঙ্ক স্টাইল: "line bai line" */
-        .icon-list a {
-            display: flex;
-            align-items: center;
-            padding: 12px 0;
-            color: var(--text-color);
-            text-decoration: none;
-            transition: color 0.3s, transform 0.3s;
-            border-bottom: 1px dashed var(--border-color);
-        }
-
-        .icon-list a:last-child {
-            border-bottom: none;
-        }
-
-        .icon-list a:hover {
-            color: var(--highlight-color);
-            transform: translateX(5px); 
-        }
-
-        .icon-list i {
-            font-size: 1.3rem;
-            margin-right: 15px;
-            width: 30px; 
-            text-align: center;
-            /* প্রিমিয়াম গ্লো এফেক্ট */
-            text-shadow: 0 0 7px var(--highlight-color), 0 0 5px var(--highlight-color);
-        }
-
-        .link-text {
-            flex-grow: 1;
-            font-weight: 600;
-        }
-
-        .link-detail {
-            font-size: 0.8rem;
-            opacity: 0.6;
-        }
-        
-        /* আপনার দেওয়া CSS কোড শেষ */
-    </style>
+    <title>𝗥𝗔𝗝𝗨 𝟵𝗫 𝗢𝗙𝗙𝗜𝗖𝗜𝗔𝗟𝗦 - নিয়ন পোর্টফোলিও</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <div class="animated-bg"></div>
-
-    <div class="profile-container">
-        
-        <div class="profile-header">
-            <div class="profile-image-container">
-                <img src="https://i.ibb.co/L50nLpD/placeholder-profile.jpg" alt="Profile Picture">
-            </div>
-            <h2>MAHBUBULLAH</h2>
-            <p>owner of **CYBER BOT ⚠️ BOT ⚠️ TEAM** 😈</p>
+    <header class="hero-section">
+        <div class="profile-card">
+            <img src="profile.jpg" alt="Profile Picture" class="profile-pic">
+            <h1 class="neon-text name">MAHBUBU ULLASH</h1>
+            <p class="neon-text title">👑𝐃𝐑𝐄𝐀𝐌 𝐄𝐃𝐈𝐓𝐎𝐑 𝐒𝐎𝐂𝐈𝐄𝐓𝐘🌿🐣</p>
         </div>
+    </header>
 
-        <div class="card">
-            <h3 class="section-title">ALIGHT MOTION RESOURCES</h3>
-            <div class="icon-list">
-                <a href="#" target="_blank">
-                    <i class="fas fa-file-code"></i>
-                    <span class="link-text">Alight Motion XML File</span>
-                    <span class="link-detail">Download Link</span>
-                </a>
-                <a href="#" target="_blank">
-                    <i class="fas fa-palette"></i>
-                    <span class="link-text">MAP CC Preset</span>
-                    <span class="link-detail">প্রিমিয়াম লুক</span>
-                </a>
-                <a href="#" target="_blank">
-                    <i class="fas fa-brush"></i>
-                    <span class="link-text">MAX LOBBY CC</span>
-                    <span class="link-detail">Exclusive</span>
-                </a>
-                <a href="#" target="_blank">
-                    <i class="fas fa-fill-drip"></i>
-                    <span class="link-text">NORMAL LOBBY CC</span>
-                    <span class="link-detail">All Devices</span>
-                </a>
+    <section class="skills-section">
+        <h2 class="section-title neon-text">দক্ষতা (Skills & Expertise)</h2>
+        <div class="skills-grid">
+
+            <div class="skill-category neon-glow-green">
+                <h3>প্রোগ্রামিং</h3>
+                <div class="skill-list">
+                    <span class="skill-item">JavaScript</span>
+                    <span class="skill-item">Python</span>
+                    <span class="skill-item">HTML</span>
+                    <span class="skill-item">CSS</span>
+                </div>
             </div>
-        </div>
 
-        <div class="card">
-            <h3 class="section-title">SOCIAL LINKS</h3>
-            <div class="icon-list">
-                <a href="#" target="_blank">
-                    <i class="fab fa-youtube"></i>
-                    <span class="link-text">YouTube Channel</span>
-                    <span class="link-detail">@YourHandle</span>
-                </a>
-                <a href="#" target="_blank">
-                    <i class="fab fa-instagram"></i>
-                    <span class="link-text">Instagram Profile</span>
-                    <span class="link-detail">Follow Me</span>
-                </a>
-                <a href="#" target="_blank">
-                    <i class="fab fa-facebook"></i>
-                    <span class="link-text">Facebook Page/ID</span>
-                    <span class="link-detail">Official</span>
-                </a>
-                <a href="#" target="_blank">
-                    <i class="fab fa-discord"></i>
-                    <span class="link-text">Discord Server</span>
-                    <span class="link-detail">Join Now!</span>
-                </a>
+            <div class="skill-category neon-glow-blue">
+                <h3>ফ্রেমওয়ার্কস ও টুলস</h3>
+                <div class="skill-list">
+                    <span class="skill-item">Bot Frameworks</span>
+                    <span class="skill-item">Git</span>
+                    <span class="skill-item">REST APIs</span>
+                </div>
+            </div>
+
+            <div class="skill-category neon-glow-magenta">
+                <h3>ডেভেলপমেন্ট ও অন্যান্য</h3>
+                <div class="skill-list">
+                    <span class="skill-item">Web Developer</span>
+                    <span class="skill-item">Database</span>
+                    <span class="skill-item">Problem Solving</span>
+                    <span class="skill-item">Teamwork</span>
+                </div>
             </div>
         </div>
+    </section>
+    
+    <section class="contact-section">
+        <h2 class="section-title neon-text">যোগাযোগ (Contact)</h2>
+        <p>আপনার ইমেইল, সোশ্যাল মিডিয়া লিঙ্ক ইত্যাদি এখানে যোগ করুন।</p>
+    </section>
 
-    </div>
-
+    <script src="script.js"></script>
 </body>
 </html>
